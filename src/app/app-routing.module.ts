@@ -5,6 +5,7 @@ import { SignupComponent } from './components/user/signup/signup.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { AuthGuard } from './auth/auth.guard';
 import { HomeComponent } from './components/home/home.component';
+import { AccountComponent } from './components/user/account/account.component';
 
 const routes: Routes = [
   {
@@ -24,7 +25,10 @@ const routes: Routes = [
     component: NavigationComponent,
     canActivate:[AuthGuard],
     children: [
-
+      {
+        path:'account',
+        component: AccountComponent
+      }
     ]
   }
 ];

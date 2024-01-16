@@ -1,1 +1,27 @@
-<p>login works!</p>
+<div class="container">
+    <div class="card mat-elevation-z4">
+        <div class="presentation">
+            <h1>Welcome to Iotizzy, internet of things platform!</h1>
+            <img src="/assets/complete-logo.png" alt="Logo Iotizzy" class="presentation-logo">
+        </div>
+        <div class="form">
+            <div class="form-header">
+                <img src="/assets/complete-logo.png" alt="Logo Iotizzy" class="form-logo">
+                <h2>Welcome to Iotizzy</h2>
+            </div>
+            <h2>LOGIN</h2>
+            <mat-form-field appearance="outline" class="input">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="Email" type="email" [(ngModel)]="form.username" required>
+                <mat-icon matSuffix>email</mat-icon>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="input">
+                <mat-label>Password</mat-label>
+                <input matInput placeholder="Password" type="password" [(ngModel)]="form.password"required>
+                <mat-icon matSuffix>password</mat-icon>
+            </mat-form-field>
+            <button mat-raised-button color="primary" class="button" (click)="login()">Login</button>
+            <p routerLink="/signup">Sign up for Iotizzy</p>
+        </div>
+    </div>
+</div>
