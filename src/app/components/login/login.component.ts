@@ -22,14 +22,14 @@ export class LoginComponent {
     private router: Router,
     private toast: ToastrService) { }
 
-  login() {
-    console.log(this.form)
-    this.service.authenticate(this.form).subscribe(res => {
-      this.toast.success('Welcome to Iotizzy', "SUCCESS");
-      this.router.navigate(['/home'])
-    },(ex) => {
-      this.toast.error(ex.error, "ERROR")
-      console.log(ex.error)
+  login(): void{
+    this.service.authenticate(this.form).subscribe({
+      next: (value) => {
+        this.toast.success('Welcome to Iotizzy', "SUCCESS")
+        this.router.navigate(['/home'])
+      }, error: (err) => {
+        this.toast.error(err.error, "ERROR")
+      }
     })
   }
 }
